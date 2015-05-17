@@ -5,10 +5,3 @@ node_modules
 
 ### Bower ###
 vendor
-
-
-### Gulp ###
-public/assets/img
-public/assets/css
-public/assets/js
-public/assets/videos
