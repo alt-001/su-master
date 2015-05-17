@@ -1,0 +1,8 @@
+#brandTraces(ng-controller='brandCtrl')
+  .col-xs-3
+    include brand-sidebar
+  .col-xs-9
+    ul#traces(masonry)
+      li.masonry-brick.col-xs-4.inspiration(ng-repeat='trace in brandTraces')
+        a.fancybox(href="/assets/brands/{{trace.image}}" rel="gallery" title="{{trace.text}}" fancybox)
+          img.img-responsive(ng-src="/assets/brands/{{trace.image}}")

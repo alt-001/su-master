@@ -1,0 +1,165 @@
+#filters
+  top 0
+  left 0
+  position fixed
+  width 300px
+  height 100%
+  padding 25px 0
+  z-index 128
+  background-color rgb(249, 249, 249)
+  text-align center
+  box-sizing border-box
+  padding-left 20px
+  padding-right 20px
+  padding-top 180px
+  overflow-y auto
+  #handle
+    height 160px
+    background-color #d1f1db
+    position absolute
+    width 100%
+    padding 60px 30px 0 30px
+    top 0
+    left 0
+    font-family "PT Sans"
+    text-align left
+    text-transform uppercase
+    h4,h1
+      font-weight 700
+      margin 0
+      line-height 1.4
+    h1
+      background url('/assets/img/ui/pull-left.png') no-repeat center right
+      width 110px
+    .pull-tab
+      width 55px
+      height 140px
+      background url('/assets/img/ui/pull-tab.png') no-repeat center center
+      position absolute
+      top -20px
+      right 40px
+      cursor pointer
+      &:hover
+        top 0
+  >div
+    display block
+    box-sizing border-box
+    height auto
+    border-bottom 1px solid #dddddd
+    padding-bottom 10px
+    margin-left 0
+    margin-bottom 20px
+    &:last-child
+      border none
+  input[type="radio"]
+  input[type="checkbox"]
+    display none
+  .filter-button
+    background-color rgba(255, 255, 255, 0)
+    border 4px solid #ffffff
+    border-radius 8px
+    color #B0B1B2
+    display table
+    font-family "PT Sans","source sans pro"
+    font-weight 700
+    text-align center
+    text-transform uppercase
+    margin 0 auto
+    width calc(100% - 20px)
+    font-size 12px
+    transition all 0.5s ease
+    cursor pointer
+    box-sizing border-box
+    padding 8px
+    margin-left 10px
+    margin-right 10px
+    margin-bottom 10px
+    &:hover,
+    &.active
+      background-color white
+      border 4px solid #b4b4b4
+      box-shadow 0 5px 0 #dadada
+      color rgb(87, 87, 87)
+  .filter-button-small
+    font-size 9px
+  .colour
+    text-indent -99999px
+    height 27px
+    width 27px
+    border-radius 50%;
+    margin 8px 15px
+    transition all 0.5s ease
+    cursor pointer
+    &:hover,
+    &.active
+      box-shadow 0px 4px 0px 1px #ababab
+  .child
+    display table-cell
+    vertical-align middle
+  .prefer
+    color rgb(133, 133, 133)
+    font italic 400 0.75em/1.38 Helvetica
+    text-align center
+    text-decoration underline
+    margin-top 20px
+#subCat
+  top 0
+  left 300px
+  position fixed
+  width 200px
+  height 100%
+  padding 25px 0
+  opacity 1
+  z-index 120
+  background-color rgba(255, 255, 255,.9)
+  text-align center
+  box-sizing border-box
+  padding-left 20px
+  padding-right 20px
+  &.active
+    left 0
+    opacity 0
+    -webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+    -moz-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+    -o-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+    transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); /* ease-in-out */
+  >div
+    display block
+    box-sizing border-box
+    height auto
+    border-bottom 1px solid #dddddd
+    padding-bottom 10px
+    margin-bottom 20px
+    &:last-child
+      border none
+  input[type="radio"]
+  input[type="checkbox"]
+    display none
+  .filter-button
+    background-color rgba(255, 255, 255, 0)
+    border 4px solid #ffffff
+    border-radius 8px
+    color #B0B1B2
+    display table
+    font-family "PT Sans","source sans pro"
+    font-weight 700
+    text-align center
+    text-transform uppercase
+    margin 0 auto
+    width calc(100% - 20px)
+    font-size 12px
+    transition all 0.5s ease
+    cursor pointer
+    box-sizing border-box
+    padding 8px
+    margin-left 10px
+    margin-right 10px
+    margin-bottom 10px
+    &:hover,
+    &.active
+      background-color white
+      border 4px solid #b4b4b4
+      box-shadow 0 5px 0 #dadada
+      color rgb(87, 87, 87)
+    a
+      color grey

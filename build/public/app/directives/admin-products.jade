@@ -1,0 +1,5 @@
+a(href='#') {{product.name}}
+button.btn(ng-click='startDelete(product.$id)') Delete
+.deleting(ng-show='deleting')
+	button.btn(ng-click='deleteProduct(product.$id)') Confirm
+	button.btn.btn-danger(ng-click='cancelDelete()') No

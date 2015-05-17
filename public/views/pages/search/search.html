@@ -1,0 +1,67 @@
+
+<div id="search" ng-controller="searchCtrl">
+  <div class="title">Please type here to search a lovely thing...</div>
+  <input type="text" ng-model="query" autofocus="autofocus"/>
+  <div class="results">
+    <div ng-show="filtered.length &gt; 0 &amp;&amp; query.length &gt;= 1" class="section col-xs-12">
+      <div class="header col-xs-6">
+        <h2>Brands</h2>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h4 class="more"><a ng-href="/search/brand?target={{query}}">More</a></h4>
+      </div>
+    </div>
+    <div class="section-results">
+      <ul>
+        <li search-results="search-results" ng-repeat="product in filtered = ( products | filter: query ) | limitTo: 6 | orderBy: &quot;brand&quot;" ng-show="query.length &gt;= 1" class="col-xs-2"></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div ng-show="filtered.length &gt; 0 &amp;&amp; query.length &gt;= 1" class="section col-xs-12">
+      <div class="header col-xs-6">
+        <h2>Name</h2>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h4 class="more"><a ng-href="/search/name?target={{query}}">More</a></h4>
+      </div>
+    </div>
+    <div class="section-results">
+      <ul>
+        <li search-results="search-results" ng-repeat="product in filtered = ( products | filter: query ) | limitTo: 6 | orderBy: &quot;name&quot;" ng-show="query.length &gt;= 1" class="col-xs-2"></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div ng-show="filtered.length &gt; 0 &amp;&amp; query.length &gt;= 1" class="section col-xs-12">
+      <div class="header col-xs-6">
+        <h2>Recents</h2>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h4 class="more"><a ng-href="/search/id?target={{query}}">More</a></h4>
+      </div>
+    </div>
+    <div class="section-results">
+      <ul>
+        <li search-results="search-results" ng-repeat="product in filtered = ( products | filter: query ) | limitTo: 6 | orderBy: &quot;id&quot;" ng-show="query.length &gt;= 1" class="col-xs-2"></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div ng-show="filtered.length &gt; 0 &amp;&amp; query.length &gt;= 1" class="section col-xs-12">
+      <div class="header col-xs-6">
+        <h2>Price</h2>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h4 class="more"><a ng-href="/search/price?target={{query}}">More</a></h4>
+      </div>
+    </div>
+    <div class="section-results">
+      <ul>
+        <li search-results="search-results" ng-repeat="product in filtered = ( products | filter: query ) | limitTo: 6 | orderBy: &quot;price&quot;" ng-show="query.length &gt;= 1" class="col-xs-2"></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div ng-show="filtered.length == 0 &amp;&amp; query.length &gt;= 1" class="no-result">
+    <h2>No result found :(</h2>
+    <p>Your Search did not return any results, please try again!</p>
+  </div>
+</div>

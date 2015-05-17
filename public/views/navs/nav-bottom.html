@@ -1,0 +1,30 @@
+
+<div id="nav-bottom">
+  <div class="menu">
+    <div class="menu-block col-xs-4"><span class="explore"><a ng-href="/explore">Explore</a></span><span class="search"><a ng-href="/search">Search</a></span></div>
+    <div ng-controller="authCtrl" class="menu-block col-xs-4 text-center"><span ng-hide="currentUser" class="login"><a ng-href="/signup">Log in</a></span><span ng-show="currentUser" class="user"><a href="/user/{{currentUser.$id}}/love/loves">{{currentUser.firstname}} {{currentUser.lastname}}</a></span><span ng-show="currentUser" class="logout"><a ng-href="/logout" ng-click="logout()">Log out</a></span></div>
+    <div class="menu-block col-xs-4 text-right"><span class="follow"><a href="" ng-model="showFollow" ng-click="showFollow=true">Follow</a></span><span class="info"><a ng-href="/info/about">Info</a></span><span class="language"><a ng-href="#" class="chinese">中文</a></span></div>
+  </div>
+</div>
+<div id="follow" ng-show="showFollow"><img ng-click="showFollow=false" src="/assets/img/ui/follow_cross.png" class="close img-responsive"/>
+  <div class="wrapper">
+    <div class="row">
+      <h4>FOLLOW US ON</h4>
+    </div>
+    <div class="row">
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="twitter" src="/assets/img/ui/twitter.png" class="social_icon text-center img-responsive"/></a></div>
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="facebook" src="/assets/img/ui/facebook.png" class="social_icon text-center img-responsive"/></a></div>
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="pinterest" src="/assets/img/ui/pinterest.png" class="social_icon text-center img-responsive"/></a></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="weibo" src="/assets/img/ui/sina-weibo.png" class="social_icon text-center img-responsive"/></a></div>
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="googleplus" src="/assets/img/ui/googleplus.png" class="social_icon text-center img-responsive"/></a></div>
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="instagram" src="/assets/img/ui/instagram.png" class="social_icon text-center img-responsive"/></a></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="youku" src="/assets/img/ui/nice.png" class="social_icon text-center img-responsive"/></a></div>
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="qzone" src="/assets/img/ui/qzone.png" class="social_icon text-center img-responsive"/></a></div>
+      <div class="col-xs-4"><a href="#" target="_blank"><img id="wechat" src="/assets/img/ui/wechat.png" class="social_icon text-center img-responsive"/></a></div>
+    </div>
+  </div>
+</div>

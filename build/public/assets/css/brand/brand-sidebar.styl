@@ -1,0 +1,101 @@
+#brandSidebar
+  height 100%
+  background #f6f6f6
+  padding 40px
+  padding-left 30px
+  left 0
+  font-family  'PT Sans'
+  font-weight bold
+  color  #000
+  position fixed
+  overflow scroll
+  width inherit
+  z-index 999
+  .brand-title
+    font-size 30px
+    margin-top 20%
+    margin-bottom 40px
+    text-align right
+    font-weight 700
+  #brandFollow
+    margin-bottom 15px
+    button
+      padding 5px 15px
+      letter-spacing .5px
+      margin-top 1px
+      font-size 12px
+      color white
+      background #bdbdbc
+      float right
+      transition all .2s ease-in-out
+      border-radius 5px
+      &:hover
+        color white
+        background-color black
+      &.follow
+        background black
+  #intro
+    font-size 14px
+    padding 15px 0
+    font-weight lighter
+    border-bottom 1px solid #ccc
+    border-top 1px solid #ccc
+    text-align left
+    clear both
+    color #646464
+  #chapters
+    margin-top 40px
+    ul
+      list-style-type none
+      text-align right
+      margin-right -40px
+      li
+        margin-bottom 30px
+        a
+          background url('/assets/img/ui/icons-100.png') 150% center no-repeat #f6f6f6
+          transition all .5s ease-in-out
+          color #929292
+          font-size: 22px
+          font-weight normal
+          padding 10px 0
+          padding-right 50px
+          text-decoration none
+          &:hover
+            background url('/assets/img/ui/icons-100.png') right center no-repeat #f6f6f6
+            color:#000
+          &.active
+            background url('/assets/img/ui/icons-100.png') right center no-repeat #f6f6f6
+        #productExpand
+          position absolute
+          width 200px
+          margin-top -45px
+          right 120px 
+          z-index 0         
+          li
+            padding 6% 0
+            display inline-block
+            margin-right 10%
+            background transparent
+            &.active
+              a
+               color black   
+            &:first-child
+              margin-right 13%
+            &:nth-child(2)
+              background url('/assets/images/shape.png') center right no-repeat
+              padding-right 20px
+            a
+              color #a8a8a8
+              &:hover
+                color black         
+    .product-tab
+      width 250px
+      li
+        float left
+        transition none 
+        &.all.onshow
+          background: url('/assets/images/shape.png') center center no-repeat 
+        &.featured.onshow
+          background: url('/assets/images/shape.png') 72% center no-repeat          
+          &.featured.onshow
+            background-position 92px center

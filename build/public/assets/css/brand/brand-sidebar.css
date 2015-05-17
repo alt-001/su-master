@@ -1,0 +1,154 @@
+#brand-sidebar {
+  height: 100%;
+  background: #f6f6f6;
+  padding: 40px;
+  padding-left: 30px;
+  left: 0;
+  font-family: 'PT Sans';
+  font-weight: bold;
+  color: #000;
+  position: fixed;
+  width: inherit;
+  z-index: 999;
+}
+#brand-sidebar .title {
+  font-size: 30px;
+  margin-top: 20%;
+  text-align: right;
+  font-weight: 700;
+}
+#brand-sidebar .misc {
+  margin: 15px 0;
+  margin-top: 30px;
+}
+#brand-sidebar .misc .share {
+  padding-right: 10px;
+  padding-top: 4px;
+  border-right: 1px solid #cfcfcf;
+}
+#brand-sidebar .misc .share img {
+  opacity: 0.3;
+  width: 20px;
+}
+#brand-sidebar .misc a {
+  margin-right: 10px;
+  font-size: 12px;
+  color: #929292;
+  text-decoration: none;
+}
+#brand-sidebar .misc a.follow {
+  padding: 5px 15px;
+  margin-right: 0;
+  margin-left: 5px;
+  letter-spacing: 0.5px;
+  margin-top: 1px;
+  color: #fff;
+  background: #bdbdbc;
+  float: right;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+}
+#brand-sidebar .misc a.follow:hover {
+  color: #fff;
+  background-color: #000;
+}
+#brand-sidebar .misc a.message {
+  padding: 13px 20px;
+  padding-left: 17px;
+  font-size: 0;
+  background: url("/assets/images/speechbubble-small.png") center center no-repeat #efefef;
+  border-radius: 5px;
+  background-color: #bdbdbc;
+  transition: all 0.2s ease-in-out;
+}
+#brand-sidebar .misc a.message:hover {
+  background-color: #000;
+}
+#brand-sidebar .brand-info {
+  font-size: 14px;
+  padding: 15px 0;
+  font-weight: lighter;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  text-align: left;
+  color: #646464;
+}
+#brand-sidebar .brand-menu {
+  padding-top: 40px;
+}
+#brand-sidebar .brand-menu ul {
+  list-style-type: none;
+  text-align: right;
+  margin-right: -40px;
+}
+#brand-sidebar .brand-menu ul li {
+  padding: 8px 0;
+  padding-right: 40px;
+  margin-bottom: 10px;
+  background: url("/assets/images/icons-100.png") 140% center no-repeat #f6f6f6;
+  transition: all 0.5s ease-in-out;
+}
+#brand-sidebar .brand-menu ul li:hover {
+  background: url("/assets/images/icons-100.png") right center no-repeat #f6f6f6;
+}
+#brand-sidebar .brand-menu ul li.active {
+  background: url("/assets/images/icons-100.png") right center no-repeat #f6f6f6;
+}
+#brand-sidebar .brand-menu ul li.active a {
+  color: #000;
+}
+#brand-sidebar .brand-menu ul li a {
+  color: #929292;
+  font-size: 22px;
+  font-weight: normal;
+  padding: 10px 0;
+  text-decoration: none;
+}
+#brand-sidebar .brand-menu ul li a:hover {
+  color: #000;
+}
+#brand-sidebar .brand-menu ul li #productExpand {
+  position: absolute;
+  width: 200px;
+  margin-top: -45px;
+  right: 120px;
+  z-index: 0;
+}
+#brand-sidebar .brand-menu ul li #productExpand li {
+  padding: 6% 0;
+  display: inline-block;
+  margin-right: 10%;
+  background: transparent;
+}
+#brand-sidebar .brand-menu ul li #productExpand li.active a {
+  color: #000;
+}
+#brand-sidebar .brand-menu ul li #productExpand li:first-child {
+  margin-right: 13%;
+}
+#brand-sidebar .brand-menu ul li #productExpand li:nth-child(2) {
+  background: url("/assets/images/shape.png") center right no-repeat;
+  padding-right: 20px;
+}
+#brand-sidebar .brand-menu ul li #productExpand li a {
+  color: #a8a8a8;
+}
+#brand-sidebar .brand-menu ul li #productExpand li a:hover {
+  color: #000;
+}
+#brand-sidebar .brand-menu .product-tab {
+  width: 250px;
+}
+#brand-sidebar .brand-menu .product-tab li {
+  float: left;
+  transition: none;
+}
+#brand-sidebar .brand-menu .product-tab li.all.onshow {
+  background: url("/assets/images/shape.png") center center no-repeat;
+}
+#brand-sidebar .brand-menu .product-tab li.featured.onshow {
+  background: url("/assets/images/shape.png") 72% center no-repeat;
+}
+#brand-sidebar .brand-menu .product-tab li.featured.onshow.featured.onshow {
+  background-position: 92px center;
+}

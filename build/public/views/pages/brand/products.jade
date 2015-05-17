@@ -1,0 +1,6 @@
+#brandProducts(ng-controller='brandCtrl')
+  .col-xs-3
+    include brand-sidebar
+  .col-xs-9
+    ul#products(masonry ng-controller='productsCtrl')
+      li.masonry-brick.col-xs-6.col-md-4.col-lg-4.product(list-products ng-repeat='product in brandProducts' hover-show)

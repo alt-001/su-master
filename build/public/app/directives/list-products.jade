@@ -1,0 +1,21 @@
+.product-cover
+  img.img-responsive(ng-src="/assets/brands/{{product.image}}")
+.product-details
+  .name.col-xs-9 {{product.name}}
+  .price.col-xs-3.pull-right.text-right(ng-show='product.priceRange != true') {{product.price | currency: "£"}}
+  .price.col-xs-3.pull-right.text-right(ng-show='product.priceRange == true') From {{product.price | currency: "£"}}
+  .price.col-xs-3.pull-right.text-right(ng-show='!product.price') TBC
+  .brand.col-xs-12
+    | by 
+    a(href='/brand/{{product.brand}}/products') {{product.brand}}
+  .col-xs-12
+    a.col-xs-3(href='{{product.purchase}}' ng-show='product.purchase' target='_blank')
+      button.purchase.btn Purchase
+    span.col-xs-3(ng-hide='product.purchase')
+      button.reserve.btn(ng-click='flagProduct("reserve", product.$id)' ng-hide='ifReserved(product.$id)') Reserve
+      button.reserve-count.btn(ng-show='ifReserved(product.$id)') {{product.reservesCount}}
+      button.btn(ng-show='ifReserved(product.$id) && currentUser' ng-click='disflagProduct("reserve", product.$id)') Disreserve
+    .love.col-xs-3
+      button.love.btn(ng-click='flagProduct("love", product.$id)' ng-hide='ifLoved(product.$id)') Love
+      button.btn(ng-show='ifLoved(product.$id) && currentUser' ng-click='disflagProduct("love", product.$id)') Dislove
+button.love-count.btn{{product.lovesCount}}

@@ -1,0 +1,48 @@
+.info-wrapper {
+  padding: 30px 5%;
+  font-family: 'PT Sans' 'Source Sans Pro';
+  padding-bottom: 60px;
+}
+.info-wrapper input {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #d8d8d8;
+}
+.info-wrapper textarea {
+  padding: 10px;
+  border-radius: 5px;
+  height: 200px;
+  border: 1px solid #d8d8d8;
+  margin-bottom: 20px;
+}
+.info-wrapper p {
+  margin-bottom: 30px;
+}
+.info-wrapper a {
+  color: #000;
+}
+.info-wrapper #tabCareer .panel-heading a {
+  margin: 0;
+}
+.info-wrapper #tabCareer .panel-collapse:last-child,
+.info-wrapper #tabCareer p:last-child {
+  margin-bottom: 0;
+}
+.info-wrapper .btn-group button {
+  margin-top: 10px;
+  margin-right: 10px;
+  color: #646464;
+  font-size: 12px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #e6e6e6;
+  font-weight: 800;
+  border: 0;
+  padding: 5px 20px;
+}
+.info-wrapper .btn-group button.send {
+  background-color: #646464;
+  color: #fff;
+}

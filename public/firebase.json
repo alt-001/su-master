@@ -1,0 +1,11 @@
+{
+  "firebase": "alovelything",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**",
+    "assets/brands/**/*",
+    "vendor/**/*"
+  ]
+}

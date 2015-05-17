@@ -1,0 +1,12 @@
+#upload(ng-controller='productsCtrl')
+  h2 Products
+  span(ng-show='productsCount') {{productsCount}}
+  form(name='altProduct' ng-submit='addProduct()' novalidate='')    
+    input(type='text' name='productName' placeholder='Product name' ng-model='name' ng-required='true')
+    button.btn(type='submit' ng-disabled='altProduct.$invalid') Submit
+  h3 Search
+  input(type='text' ng-model='query' placeholder='Search')
+
+  ul#products
+    li(admin-products ng-repeat='product in products | orderBy: order: direction | filter: {$: query}') 
+      

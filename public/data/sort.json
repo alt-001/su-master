@@ -1,0 +1,26 @@
+[
+	{
+		"value": "-id", 
+		"text": "Most recent"
+	}, 
+	{
+		"value": "-likeCount", 
+		"text": "Most liked"
+	}, 
+	{
+		"value": "-price", 
+		"text": "Price high"
+	}, 
+	{
+		"value": "price", 
+		"text": "Price low"
+	}, 
+	{
+		"value": "video", 
+		"text": "Video"
+	}, 
+	{
+		"value": "featured", 
+		"text": "We recommend"
+	}
+]

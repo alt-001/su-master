@@ -1,0 +1,6 @@
+
+<div id="infoTopBar" ng-controller="infoCtrl">
+  <ul>
+    <li ng-repeat="section in info"><a ng-href="/info/{{section.$id}}" ng-class="{active: sectionActive(section.$id)}">{{section.title}}</a></li>
+  </ul>
+</div>

@@ -1,0 +1,8 @@
+#brandStory(ng-controller='brandCtrl')
+  .row
+    .col-xs-3
+      include brand-sidebar
+    .col-xs-9
+      .article-container
+        h4 {{brandTitle}}
+        #story(ng-include='brandStory')

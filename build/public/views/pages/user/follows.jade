@@ -1,0 +1,14 @@
+#user(ng-controller='userCtrl')
+  include user-topbar
+  #brands(ng-controller='brandCtrl')
+    ul(masonry)
+      li.masonry-brick.col-xs-2.brand(ng-repeat='brand in followedBrands') 
+        .product-cover
+          a(href='/brand/{{brand.$id}}/products') 
+            img.img-responsive(ng-src="/assets/brands/{{brand.imageThumb}}")
+        .product-details
+          a.brand.col-xs-12(href='/brand/{{brand.$id}}/products')
+            {{brand.$id}}
+          #followBrand.col-xs-6.pull-right
+            button.follow.btn(ng-click='followBrand(brand.$id)' ng-hide='ifFollowed(brand.$id)') Follow
+            button.unfollow.btn(ng-click='unfollowBrand(brand.$id)' ng-show='ifFollowed(brand.$id)') Unfollow

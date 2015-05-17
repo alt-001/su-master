@@ -1,0 +1,27 @@
+#product(ng-controller='productsCtrl')
+  .product-cover.col-xs-4
+    img.img-responsive(ng-src="/assets/brands/{{productImage}}")
+  .details.col-xs-8
+    .name.col-xs-9 {{productName}}
+    .price.col-xs-3.pull-right.text-right(ng-show='productPriceRange != true') {{productPrice | currency: "£"}}
+    .price.col-xs-3.pull-right.text-right(ng-show='productPriceRange == true') From {{productPrice | currency: "£"}}
+    .price.col-xs-3.pull-right.text-right(ng-show='!productPrice') TBC
+    .brand.col-xs-12
+      | by 
+      a(href='/brand/{{productBrand}}/products') {{productBrand}}
+    .info.col-xs-12
+      h4.header product info
+      .category category: {{productCategory}}
+      .color color: {{productColor}}
+      .material material: {{productMaterial}}
+    .product-btns.col-xs-12
+      a.col-xs-3(href='{{productPurchase}}' ng-show='productPurchase' target='_blank')
+        button.purchase.btn Purchase
+      span.col-xs-3(ng-hide='productPurchase')
+        button.reserve.btn(ng-click='flagProduct("reserve", productID)' ng-hide='ifReserved(productID)') Reserve
+        button.reserve-count.btn(ng-show='ifReserved(productID)') {{product.stats.reservesCount}}
+        button.btn(ng-show='ifReserved(productID) && currentUser' ng-click='disflagProduct("reserve", productID)') Disreserve
+      .love.col-xs-3
+        button.love.btn(ng-click='flagProduct("love", productID)' ng-hide='ifLoved(productID)') Love
+        button.btn(ng-show='ifLoved(productID) && currentUser' ng-click='disflagProduct("love", productID)') Dislove
+  button.love-count.btn(ng-show='ifLoved(productID)') {{product.lovesCount}}

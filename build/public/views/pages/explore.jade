@@ -1,0 +1,82 @@
+#explore(ng-controller='productsCtrl')
+  #filters.col-xs-3
+    #handle.col-xs-12
+      h4 feel lovely?
+      h1 pull
+      a(href="#")
+        .pull-tab
+    #gender.row.col-xs-12
+      form
+        .col-xs-6
+          label.filter-button.gender
+            input(type='radio' ng-model='genderFilter' value='x' ng-click="includeGender('x')")
+            | Man
+        .col-xs-6
+          label.filter-button.gender
+            input(type='radio' ng-model='genderFilter' value='y' ng-click="includeGender('y')")
+            | Woman
+    #category.row.col-xs-12
+      form
+        - var filterCategoryOptions = [{value: "Shoes", text: "Shoes"}, {value: "Accessories", text: "Accessories"}, {value: "Bags", text: "Bags"}, {value: "Jewellery", text: "Jewellery"}, {value: "Apparel", text: "Apparel"}, {value: "Lifestyle", text: "Lifestyle"}]
+            each val in filterCategoryOptions
+              .col-xs-6
+                label.filter-button.category
+                  input(type='radio' ng-model='category' value="#{val.value}")
+                  | #{val.text}
+    #colour.row.col-xs-12
+      form
+        - var filterColourOptions = [{value: "black", text: "#000"}, {value: "white", text: "#fff"}, {value: "grey", text: "#B6B7B8"}, {value: "red", text: "#F77071"}, {value: "blue", text: "#87A8FA"}, {value: "yellow", text: "#FBFA76"}, {value: "green", text: "#76D08C"}, {value: "brown", text: "#A28D76"}, {value: "orange", text: "#F8B573"},{value: "purple", text: "#A575B7"},{value: "Pink", text: "#F4B9F5"},{value: "neutral", text: "#F3ECCE"},{value: "neon", text: "url('../assets/img/ui/Neon.jpg') no-repeat center center;"},{value: "metallic", text: "url('../assets/img/ui/Metallic.jpg') no-repeat center center;"},{value: "print", text: "url('../assets/img/ui/print.jpg') no-repeat center center;"},{value: "reflective", text: "url('../assets/img/ui/Reflective.jpg') no-repeat center center;"}]
+            each val in filterColourOptions
+              .col-xs-3
+                label.colour(style="background: #{val.text}")
+                  input(type='checkbox' ng-click="includeColour('#{val.value}')")
+                  | #{val.value}
+    #order.row.col-xs-12
+      form
+        .col-xs-6
+          label.filter-button.order
+            input(type='radio' ng-model='order' value='-id')
+            | Most recent
+        .col-xs-6
+          label.filter-button.order
+            input(type='radio' ng-model='order' value='-price')
+            | Price high
+        .col-xs-6
+          label.filter-button.order
+            input(type='radio' ng-model='order' value='price')
+            | Price low
+        .col-xs-6
+          label.filter-button.order
+            input(type='radio' ng-model='order' value='loveCounts')
+            | Most loved
+  #filterProducts.col-xs-9
+    #products
+      ul(masonry)
+        li.masonry-brick.col-xs-6.col-md-6.col-lg-4.product(list-products ng-repeat='product in products | orderBy: order | colourFilter: this | filter: {category: category} | genderFilter: this' hover-show)
+
+script.
+  $('.filter-button.gender').click(function() {
+    $('.filter-button.gender').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('.filter-button.category').click(function() {
+    $('.filter-button.type').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('.filter-button').click(function() {
+    var isActive = $('input', this).is(':checked');
+    console.log(isActive);
+    if(isActive) {
+      $(this).addClass('active');
+    } else {
+      $(this).removeClass('active');
+    }
+  });
+  $('.colour').click(function() {
+    $('.colour').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('.filter-button.order').click(function() {
+    $('.filter-button.order').removeClass('active');
+    $(this).addClass('active');
+  });

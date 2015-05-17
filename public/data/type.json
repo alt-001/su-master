@@ -1,0 +1,26 @@
+[
+	{
+		"value": "shoe", 
+		"text": "Shoes"
+	}, 
+	{
+		"value": "accessory", 
+		"text": "Accessories"
+	}, 
+	{
+		"value": "bag", 
+		"text": "Bags"
+	},
+	{
+		"value": "jewelly", 
+		"text": "Jewelly"
+	}, 
+	{
+		"value": "appeal", 
+		"text": "Appeal"
+	}, 
+	{
+		"value": "misc", 
+		"text": "Other misc"
+	}
+]

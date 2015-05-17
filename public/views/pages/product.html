@@ -1,0 +1,28 @@
+
+<div id="product" ng-controller="productsCtrl">
+  <div class="product-cover col-xs-4"><img ng-src="/assets/brands/{{productImage}}" class="img-responsive"/></div>
+  <div class="details col-xs-8">
+    <div class="name col-xs-9">{{productName}}</div>
+    <div ng-show="productPriceRange != true" class="price col-xs-3 pull-right text-right">{{productPrice | currency: "£"}}</div>
+    <div ng-show="productPriceRange == true" class="price col-xs-3 pull-right text-right">From {{productPrice | currency: "£"}}</div>
+    <div ng-show="!productPrice" class="price col-xs-3 pull-right text-right">TBC</div>
+    <div class="brand col-xs-12">by <a href="/brand/{{productBrand}}/products">{{productBrand}}</a></div>
+    <div class="info col-xs-12">
+      <h4 class="header">product info</h4>
+      <div class="category">category: {{productCategory}}</div>
+      <div class="color">color: {{productColor}}</div>
+      <div class="material">material: {{productMaterial}}</div>
+    </div>
+    <div class="product-btns col-xs-12"><a href="{{productPurchase}}" ng-show="productPurchase" target="_blank" class="col-xs-3">
+        <button class="purchase btn">Purchase</button></a><span ng-hide="productPurchase" class="col-xs-3">
+        <button ng-click="flagProduct(&quot;reserve&quot;, productID)" ng-hide="ifReserved(productID)" class="reserve btn">Reserve</button>
+        <button ng-show="ifReserved(productID)" class="reserve-count btn">{{product.stats.reservesCount}}</button>
+        <button ng-show="ifReserved(productID) &amp;&amp; currentUser" ng-click="disflagProduct(&quot;reserve&quot;, productID)" class="btn">Disreserve</button></span>
+      <div class="love col-xs-3">
+        <button ng-click="flagProduct(&quot;love&quot;, productID)" ng-hide="ifLoved(productID)" class="love btn">Love</button>
+        <button ng-show="ifLoved(productID) &amp;&amp; currentUser" ng-click="disflagProduct(&quot;love&quot;, productID)" class="btn">Dislove</button>
+      </div>
+    </div>
+  </div>
+  <button ng-show="ifLoved(productID)" class="love-count btn">{{product.lovesCount}}</button>
+</div>

@@ -1,0 +1,30 @@
+
+<div id="user" ng-controller="userCtrl">
+  <div id="userTopbar">
+    <ul class="col-xs-8">
+      <li>my.</li>
+      <li><a href="/user/{{currentUser.$id}}/love/loves" ng-class="{active: sectionActive(&quot;love&quot;)}">love</a></li>
+      <li><a href="/user/{{currentUser.$id}}/profile" ng-class="{active: sectionActive(&quot;profile&quot;)}">profile</a></li>
+    </ul><span class="col-xs-4 pull-right text-right">lovely to meet, <b>{{currentUser.firstname}} {{currentUser.lastname}}</b></span>
+  </div><br class="clearfix"/>
+  <div id="subNavi" ng-show="ifUnderLove()">
+    <ul>
+      <li><a href="/user/{{currentUser.$id}}/love/loves" ng-class="{active: subSectionActive(&quot;loves&quot;)}">LOVELY PRODUCTS</a></li>
+      <li><a href="/user/{{currentUser.$id}}/love/reserves" ng-class="{active: subSectionActive(&quot;reserves&quot;)}">RESERVED PRODUCTS</a></li>
+      <li><a href="/user/{{currentUser.$id}}/love/follows" ng-class="{active: subSectionActive(&quot;follows&quot;)}">FOLLOWED BRANDS</a></li>
+    </ul>
+  </div><br class="clearfix"/>
+  <div id="brands" ng-controller="brandCtrl">
+    <ul masonry="masonry">
+      <li ng-repeat="brand in followedBrands" class="masonry-brick col-xs-2 brand">
+        <div class="product-cover"><a href="/brand/{{brand.$id}}/products"><img ng-src="/assets/brands/{{brand.imageThumb}}" class="img-responsive"/></a></div>
+        <div class="product-details"><a href="/brand/{{brand.$id}}/products" class="brand col-xs-12">{{brand.$id}}</a>
+          <div id="followBrand" class="col-xs-6 pull-right">
+            <button ng-click="followBrand(brand.$id)" ng-hide="ifFollowed(brand.$id)" class="follow btn">Follow</button>
+            <button ng-click="unfollowBrand(brand.$id)" ng-show="ifFollowed(brand.$id)" class="unfollow btn">Unfollow</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

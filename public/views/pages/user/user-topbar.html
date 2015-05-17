@@ -1,0 +1,15 @@
+
+<div id="userTopbar">
+  <ul class="col-xs-8">
+    <li>my.</li>
+    <li><a href="/user/{{currentUser.$id}}/love/loves" ng-class="{active: sectionActive(&quot;love&quot;)}">love</a></li>
+    <li><a href="/user/{{currentUser.$id}}/profile" ng-class="{active: sectionActive(&quot;profile&quot;)}">profile</a></li>
+  </ul><span class="col-xs-4 pull-right text-right">lovely to meet, <b>{{currentUser.firstname}} {{currentUser.lastname}}</b></span>
+</div><br class="clearfix"/>
+<div id="subNavi" ng-show="ifUnderLove()">
+  <ul>
+    <li><a href="/user/{{currentUser.$id}}/love/loves" ng-class="{active: subSectionActive(&quot;loves&quot;)}">LOVELY PRODUCTS</a></li>
+    <li><a href="/user/{{currentUser.$id}}/love/reserves" ng-class="{active: subSectionActive(&quot;reserves&quot;)}">RESERVED PRODUCTS</a></li>
+    <li><a href="/user/{{currentUser.$id}}/love/follows" ng-class="{active: subSectionActive(&quot;follows&quot;)}">FOLLOWED BRANDS</a></li>
+  </ul>
+</div><br class="clearfix"/>

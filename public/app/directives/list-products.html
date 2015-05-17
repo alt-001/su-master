@@ -1,0 +1,20 @@
+
+<div class="product-cover"><img ng-src="/assets/brands/{{product.image}}" class="img-responsive"/></div>
+<div class="product-details">
+  <div class="name col-xs-9">{{product.name}}</div>
+  <div ng-show="product.priceRange != true" class="price col-xs-3 pull-right text-right">{{product.price | currency: "£"}}</div>
+  <div ng-show="product.priceRange == true" class="price col-xs-3 pull-right text-right">From {{product.price | currency: "£"}}</div>
+  <div ng-show="!product.price" class="price col-xs-3 pull-right text-right">TBC</div>
+  <div class="brand col-xs-12">by <a href="/brand/{{product.brand}}/products">{{product.brand}}</a></div>
+  <div class="col-xs-12"><a href="{{product.purchase}}" ng-show="product.purchase" target="_blank" class="col-xs-3">
+      <button class="purchase btn">Purchase</button></a><span ng-hide="product.purchase" class="col-xs-3">
+      <button ng-click="flagProduct(&quot;reserve&quot;, product.$id)" ng-hide="ifReserved(product.$id)" class="reserve btn">Reserve</button>
+      <button ng-show="ifReserved(product.$id)" class="reserve-count btn">{{product.reservesCount}}</button>
+      <button ng-show="ifReserved(product.$id) &amp;&amp; currentUser" ng-click="disflagProduct(&quot;reserve&quot;, product.$id)" class="btn">Disreserve</button></span>
+    <div class="love col-xs-3">
+      <button ng-click="flagProduct(&quot;love&quot;, product.$id)" ng-hide="ifLoved(product.$id)" class="love btn">Love</button>
+      <button ng-show="ifLoved(product.$id) &amp;&amp; currentUser" ng-click="disflagProduct(&quot;love&quot;, product.$id)" class="btn">Dislove</button>
+    </div>
+  </div>
+</div>
+<button class="love-count btn">{{product.lovesCount}}</button>

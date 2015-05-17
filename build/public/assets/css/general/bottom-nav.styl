@@ -1,0 +1,44 @@
+#nav-bottom
+  position fixed
+  bottom 0
+  left 0
+  right 0
+  z-index 1000
+  background-color rgb(0, 0, 0)
+  box-shadow 0 -5px 0 rgba(255, 255, 255, 0.18)
+  height 40px
+  overflow hidden
+  span
+    display inline-block
+    margin-top 2px
+    &.login
+      a
+        background-image none
+    &.user
+      a
+        background-image none
+    a
+      color rgb(160, 160, 160)
+      font-family 'PT Sans'
+      font-weight 700
+      font-size 14px
+      line-height 1.38em
+      text-transform uppercase
+      text-align center
+      text-decoration none
+      display block
+      padding 10px 13px 10px 20px
+      background url('/assets/img/ui/navi_dot.png') -1px 14px no-repeat
+      &:hover
+        transition all 0.8s ease
+        color #fff
+      i
+        margin-left 5px
+        color white
+  span:first-child
+  span.language
+    a 
+      background-image none
+  span.language
+    border-left: 1px solid #2d2d2d;
+    padding-right 10px

@@ -1,0 +1,8 @@
+#brandInspirations(ng-controller='brandCtrl')
+  .col-xs-3
+    include brand-sidebar
+  .col-xs-9
+    ul#inspirations(masonry)
+      li.masonry-brick.col-xs-4.inspiration(ng-repeat='inspiration in brandInspirations')
+        a.fancybox(href="/assets/brands/{{inspiration.image}}" rel="gallery" title="{{inspiration.text}}" fancybox)
+          img.img-responsive(ng-src="/assets/brands/{{inspiration.image}}")

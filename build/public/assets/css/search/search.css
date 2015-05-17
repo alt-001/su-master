@@ -1,0 +1,99 @@
+#search {
+  font-family: 'PT Sans' 'Source San Pro';
+}
+#search .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#search .close a img {
+  margin: 20px;
+  opcacity: 0.8;
+}
+#search .title {
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+  margin-left: 1%;
+  margin-top: 60px;
+}
+#search input {
+  color: #908f8f;
+  font: 700 100px/1.2 'PT Sans';
+  height: 120px;
+  padding-left: 10px;
+  position: absolute;
+  text-transform: uppercase;
+  width: 100%;
+  border: none;
+}
+#search .results {
+  width: 100%;
+  margin-top: 150px;
+  padding: 10px;
+}
+#search .results header {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+#search .results h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+#search .results h4 {
+  margin: 0;
+}
+#search .results img {
+  margin-bottom: 20px;
+}
+#search .results li {
+  margin-bottom: 10px;
+  display: block;
+  overflow: hidden;
+}
+#search .results a {
+  color: #000;
+  font-size: 14px;
+}
+#search .results .more a {
+  color: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #c8c8c8;
+}
+#search .results .info {
+  padding-left: 15px;
+}
+#search .results .info div {
+  line-height: 1.7;
+}
+#search .results .info div a {
+  color: #000;
+  font-size: 12px;
+  font-weight: 100;
+}
+#search .results .info .product {
+  font: 700 1em/1.7 'PT Sans';
+}
+#search .results .info .designer {
+  font-size: 12px;
+}
+#search .results .info .price {
+  font-size: 12px;
+}
+#search .no-result {
+  color: #908f8f;
+}
+#search .no-result h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+#search .no-result p {
+  font-style: italic;
+}

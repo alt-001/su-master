@@ -1,0 +1,19 @@
+#userTopbar
+  ul.col-xs-8
+    li my.
+    li
+      a(href='/user/{{currentUser.$id}}/love/loves' ng-class='{active: sectionActive("love")}') love
+    li
+      a(href='/user/{{currentUser.$id}}/profile' ng-class='{active: sectionActive("profile")}') profile
+  span.col-xs-4.pull-right.text-right lovely to meet, 
+    b {{currentUser.firstname}} {{currentUser.lastname}}
+br.clearfix
+#subNavi(ng-show='ifUnderLove()')
+  ul
+    li
+      a(href='/user/{{currentUser.$id}}/love/loves' ng-class='{active: subSectionActive("loves")}') LOVELY PRODUCTS
+    li
+      a(href='/user/{{currentUser.$id}}/love/reserves' ng-class='{active: subSectionActive("reserves")}') RESERVED PRODUCTS
+    li
+      a(href='/user/{{currentUser.$id}}/love/follows' ng-class='{active: subSectionActive("follows")}') FOLLOWED BRANDS
+br.clearfix

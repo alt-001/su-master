@@ -1,0 +1,10 @@
+.col-xs-11
+  a(href='/product/{{product.$id}}')
+    img.cover.img-responsive(ng-src='/assets/brands/{{product.image}}')
+.col-xs-12.pull-right
+  .product
+    a(href='/product/{{product.$id}}') {{product.name | wordsTrunc: 10}}
+  .brand
+    | by 
+    a(href='/brand/{{product.brand}}/products') {{product.brand}}
+  .price {{product.price | currency: '£'}}

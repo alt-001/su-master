@@ -1,0 +1,15 @@
+
+<div id="login" ng-controller="authCtrl">
+  <form name="userRegister" ng-submit="register()" novalidate="">
+    <input type="firstname" name="firstname" placeholder="First Name" ng-model="user.firstname" ng-required="true"/>
+    <p ng-show="userRegister.firstname.$invalid &amp;&amp; userRegister.firstname.$touched" class="error validation">First Name is required  </p>
+    <input type="lastname" name="lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true"/>
+    <p ng-show="userRegister.lastname.$invalid &amp;&amp; userRegister.lastname.$touched" class="error validation">Last Name is required</p>
+    <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true"/>
+    <p ng-show="userRegister.email.$invalid &amp;&amp; userRegister.email.$touched" class="error validation">Must be a valid email</p>
+    <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true"/>
+    <p ng-show="userRegister.password.$invalid &amp;&amp; userRegister.password.$touched" class="error validation">password is required </p>
+    <button type="submit" ng-disabled="userRegister.$invalid" class="btn">Register</button>
+    <p>or <a href="/login">Login</a></p>
+  </form>
+</div>

@@ -1,0 +1,161 @@
+#brandChapter {
+  font-family: "PT Sans";
+}
+#brandChapter .info {
+  padding: 20px 60px 80px 60px;
+}
+#brandChapter .info h3 {
+  font-weight: bold;
+  font-size: 30px;
+  width: 50%;
+  float: left;
+}
+#brandChapter .info p {
+  font-size: 18px;
+  font-weight: 100;
+  margin-top: 20px;
+  font-family: "source sans pro" "PT Sans";
+}
+#brandChapter .info .share {
+  margin-top: 30px;
+}
+#brandChapter #momentWrapper {
+  padding: 20px 60px 80px 60px;
+}
+#brandChapter #momentWrapper h4 {
+  text-align: center;
+  font-weight: 700;
+}
+#brandChapter #momentWrapper .carousels {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  background: #dadada;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-inner {
+  padding: 15px 7.5px;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-inner li {
+  margin: 0 7.5px;
+  width: calc(20% - 15px);
+  cursor: pointer;
+  float: left;
+  position: relative;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-inner li:hover {
+  border: 1px solid #c5c5c5;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-inner li:hover .info-wrapper {
+  opacity: 1;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-inner li .info-wrapper {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-inner li .info-wrapper h4 {
+  margin: 0;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 1.2;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-inner li .info-wrapper span {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: 700;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-control {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border: 4px solid #808080;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  position: absolute;
+  margin-top: 10%;
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-control.left {
+  margin-left: -37px;
+  border-top: none;
+  border-right: none;
+span
+}
+#brandChapter #momentWrapper .carousels #productCarousel1 .carousel-control.right {
+  margin-right: -37px;
+  border-bottom: none;
+  border-left: none;
+span
+}
+#brandChapter #momentWrapper .buy-look {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  background: #efefef;
+  padding: 20px;
+  padding-bottom: 25px;
+}
+#brandChapter #momentWrapper .buy-look button {
+  border-radius: 2px;
+  background-image: -moz-linear-gradient(90deg, #323232 0%, #505050 100%);
+  background-image: -webkit-linear-gradient(90deg, #323232 0%, #505050 100%);
+  background-image: -ms-linear-gradient(90deg, #323232 0%, #505050 100%);
+  box-shadow: 0px 5px 0px 0px rgba(87,87,87,0.294);
+  width: 170px;
+  height: 46px;
+  border: none;
+  font-size: 18.261px;
+  font-family: "PT Sans";
+  text-shadow: 2px 2px 0px rgba(255,255,255,0.106);
+  color: #fff;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+#brandChapter #momentWrapper .buy-look button:hover {
+  background: #dcdcdc;
+  background-image: -moz-linear-gradient(90deg, #4e4e4e 0%, #7c7c7c 100%);
+  background-image: -webkit-linear-gradient(90deg, #4e4e4e 0%, #7c7c7c 100%);
+  background-image: -ms-linear-gradient(90deg, #4e4e4e 0%, #7c7c7c 100%);
+}
+#brandChapter #momentWrapper .buy-look a {
+  margin-left: 10px;
+  margin-top: 14px;
+  opacity: 0.4;
+  transition: all 0.3s ease-in-out;
+  text-align: right;
+}
+#brandChapter #momentWrapper .buy-look a:hover {
+  opacity: 1;
+}
+#brandChapter #momentWrapper .buy-look a:hover + span {
+  opacity: 1;
+  width: 90px;
+  transition: all 0.2s ease-in-out;
+}
+#brandChapter #momentWrapper .buy-look span {
+  margin-top: 14px;
+  margin-left: 15px;
+  opacity: 0;
+  width: 0;
+  height: 20px;
+  overflow: hidden;
+}
+#brandChapter #momentWrapper .buy-look span a {
+  margin-left: 12px;
+}
+#brandChapter #momentWrapper .buy-look .share-wrapper {
+  float: right;
+}

@@ -1,0 +1,11 @@
+#home(ng-controller='productsCtrl')
+  .preload(ng-hide='ready')
+    img(src='/assets/img/ui/spinner.gif')
+    h4 please give us some time to collect lovely things...
+  #wrapper(ng-show='ready')
+    include user/login
+    #products
+      ul(masonry)
+        li.masonry-brick.col-xs-6.col-md-4.col-lg-3.product(list-products ng-repeat='product in randomProducts' ng-if='!currentUser')
+      ul(masonry)
+        li.masonry-brick.col-xs-6.col-md-4.col-lg-3.product(list-products ng-repeat='product in products | userFilter: this' ng-if='currentUser')

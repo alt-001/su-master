@@ -1,0 +1,101 @@
+#profile(ng-controller='userCtrl')
+  include user-topbar
+  #accountProfile.col-xs-12
+    .user-info.profile-cell.col-xs-6
+      .profile-header.col-xs-11
+        h4 User info
+      .profile-item.col-xs-11
+        .name 
+          strong Name:  
+          | {{currentUser.firstname}} {{currentUser.lastname}}
+        .username
+          strong User name: 
+          | {{currentUser.username}}
+        .email
+          strong Email: 
+          | {{currentUser.email}}
+        .address 
+          strong Address: 
+          | {{currentUser.address}}
+    .user-preference.profile-cell.col-xs-6
+      .profile-header.col-xs-11
+        h4 User preferences
+      .profile-item.col-xs-11
+        .fashion
+          strong Fashion: 
+          | {{fashion}}
+        .category 
+          strong Category: 
+          | {{categories}}
+        .colour 
+          strong Colour: 
+          | {{colours}}
+        .brand 
+          strong Brands: 
+          | {{brands}}
+        .subscription 
+          strong Subscription: 
+          | {{newsletter}}
+  #edit
+    button.btn(ng-model='showEdit' ng-click='showEditForm()' ng-show='ifEditable()') Edit my profile
+  #edit-form(ng-controller='userCtrl' ng-if="showEdit")
+    form(name='userInfo' ng-submit='userInfoUpdate()' novalidate='')
+      .edit-name.col-xs-12
+        .col-xs-6
+          .col-xs-11
+            h5 First name
+        .col-xs-6
+          .col-xs-12
+            h5 Last name
+        .col-xs-6
+          input.col-xs-11(type='text' name='firstname' placeholder='{{user.firstname}}' ng-model='user.firstname')
+        .col-xs-6
+          input.col-xs-12(type='text' name='lastname' placeholder='{{currentUser.lastname}}' ng-model='user.lastname')
+      .edit-username
+        h5 User name
+        input.col-xs-12(type='text' name='username' placeholder='{{currentUser.username}}' ng-model='user.username')
+      .edit-address
+        h5 Address
+        input.col-xs-12(type='text' name='address' placeholder='{{currentUser.address}}' ng-model='user.address')
+      br.clearfix
+      .edit-fashion.col-xs-12
+        .edit-title
+          h5 Fashion
+        .col-xs-3
+          input(type='radio' name='fashion' ng-model='user.fashion' value='x' ng-checked)
+          label Man's fashion
+        .col-xs-3
+          input(type='radio' name='fashion' ng-model='user.fashion' value='y')
+          label Woman's fashion
+      .edit-colour.col-xs-12
+        .edit-title
+          h5 Colour
+        - var colourOptions = [{value: "black", text: "#000"}, {value: "white", text: "#fff"}, {value: "grey", text: "#B6B7B8"}, {value: "red", text: "#F77071"}, {value: "blue", text: "#87A8FA"}, {value: "yellow", text: "#FBFA76"}, {value: "green", text: "#76D08C"}, {value: "brown", text: "#A28D76"}, {value: "orange", text: "#F8B573"},{value: "purple", text: "#A575B7"},{value: "pink", text: "#F4B9F5"},{value: "neutral", text: "#F3ECCE"},{value: "neon", text: "url('../assets/img/ui/Neon.jpg') no-repeat center center;"}, {value: "metallic", text: "url('../assets/img/ui/Metallic.jpg') no-repeat center center;"},{value: "print", text: "url('../assets/img/ui/print.jpg') no-repeat center center;"}, {value: "reflective", text: "url('../assets/img/ui/Reflective.jpg') no-repeat center center;"}]
+        each val in colourOptions
+          .col-xs-3
+            label.colour
+              input(type="checkbox" name="colour" ng-model='user.colour.#{val.value}' value="#{val.value}" checked)
+              | #{val.value}
+      .edit-category.col-xs-12
+        .edit-title
+          h5 Category
+        - var categoryOptions = [{value: "footwear", text: "Shoes"}, {value: "accessories", text: "Accessories"}, {value: "bag", text: "Bags"}, {value: "jewellery", text: "Jewellery"}, {value: "apparel", text: "Apparel"}, {value: "misc", text: "lifestyle"}]
+          each val in categoryOptions
+            .col-xs-4
+              label
+                input(type="checkbox" name="category" ng-model='user.category.#{val.value}' value="#{val.value}")
+                | #{val.text}
+      .edit-brand.col-xs-12
+        .edit-title
+          h5 Most favourite 3 brands
+        .col-xs-4
+          input.col-xs-11(type='text' name='brand' placeholder='{{currentUser.brand.first}}' ng-model='user.brand.first')
+        .col-xs-4
+          input.col-xs-11(type='text' name='brand' placeholder='{{currentUser.brand.second}}' ng-model='user.brand.second')
+        .col-xs-4
+          input.col-xs-11(type='text' name='brand' placeholder='{{currentUser.brand.third}}' ng-model='user.brand.third')
+      .edit-submit.col-xs-4
+        button.btn(type='submit') Save
+      .edit-subscription.col-xs-8
+        input(type='checkbox' name='newsletter' ng-model='user.newsletter' value='true' )
+        label Receive our newsletter and recommendation?

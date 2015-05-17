@@ -1,0 +1,13 @@
+
+<div id="upload" ng-controller="productsCtrl">
+  <h2>Products</h2><span ng-show="productsCount">{{productsCount}}</span>
+  <form name="altProduct" ng-submit="addProduct()" novalidate="">   
+    <input type="text" name="productName" placeholder="Product name" ng-model="name" ng-required="true"/>
+    <button type="submit" ng-disabled="altProduct.$invalid" class="btn">Submit</button>
+  </form>
+  <h3>Search</h3>
+  <input type="text" ng-model="query" placeholder="Search"/>
+  <ul id="products">
+    <li admin-products="admin-products" ng-repeat="product in products | orderBy: order: direction | filter: {$: query}"></li>
+  </ul>
+</div>

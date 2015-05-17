@@ -1,0 +1,38 @@
+[
+	{
+		"value": "blue", 
+		"text": "#01D4FF"
+	}, 
+	{
+		"value": "red", 
+		"text": "#F9C5E3"
+	}, 
+	{
+		"value": "black", 
+		"text": "#000"
+	}, 
+	{
+		"value": "green", 
+		"text": "#AEF5B0"
+	}, 
+	{
+		"value": "red", 
+		"text": "#FAB6B6"
+	}, 
+	{
+		"value": "blue", 
+		"text": "#DADADA"
+	}, 
+	{
+		"value": "black", 
+		"text": "#FAE4AD"
+	}, 
+	{
+		"value": "green", 
+		"text": "#ADCCFA"
+	}, 
+	{
+		"value": "blue", 
+		"text": "#D8CAB8"
+	}
+]

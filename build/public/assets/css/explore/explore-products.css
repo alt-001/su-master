@@ -1,0 +1,200 @@
+#luckyProducts {
+  width: calc(100% - 300px);
+  float: right;
+  padding-bottom: 40px;
+  background-color: #d1f1db;
+}
+#luckyProducts li {
+  background: #000;
+}
+#luckyProducts li:hover .product-cover {
+  transition: all 0.5s ease;
+  opacity: 0.7;
+}
+#luckyProducts li:hover .tag {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+#luckyProducts li .product-cover {
+  width: 100%;
+  opacity: 1;
+}
+#luckyProducts li .tag {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 15px;
+  font: 700 1em/1.2 'PT Sans';
+}
+#luckyProducts li .tag .tag-info {
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  width: 100%;
+  float: right;
+  color: #000;
+  padding: 15px;
+  font: 700 1em/1.2 'PT Sans';
+  text-decoration: underline;
+  line-height: 1.6;
+  z-index: 10;
+}
+#luckyProducts li .tag .tag-info a {
+  color: #000;
+  font: 100 1em/1.2 'PT Sans';
+}
+#luckyProducts li .tag .tag-info .remove {
+  background-color: #cdcdcd;
+  width: 20px;
+  height: 20px;
+  border: none;
+  font-size: 10px;
+}
+#luckyProducts li .tag .tag-info .small-button {
+  background-color: #b3b3b3;
+  border-radius: 3px;
+  clear: both;
+  color: #fff;
+  display: block;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.38;
+  margin: 10px 0 0 0;
+  text-align: center;
+  border: none;
+  width: 90px;
+}
+#luckyProducts li .tag .tag-info .small-button:hover {
+  transition: all 0.6s ease;
+  background-color: #000;
+}
+#luckyProducts li .tag .tag-info img {
+  margin-top: 8px;
+  margin-left: 10px;
+  height: 20px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+#luckyProducts li .tag .tag-info img:hover {
+  transition: all 0.6s ease;
+  opacity: 1;
+}
+#luckyProducts li .tag .tag-info .shadow {
+  width: 60%;
+  margin-top: -20px;
+}
+#filterProducts {
+  background-color: #eee gegeg;
+  width: calc(100% - 300px);
+  float: right;
+  padding-bottom: 20px;
+  position: relative;
+}
+#filterProducts li {
+  background: #000;
+}
+#filterProducts li:hover .product-cover {
+  transition: all 0.5s ease;
+  opacity: 0.7;
+}
+#filterProducts li:hover .tag {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+#filterProducts li .product-cover {
+  width: 100%;
+  opacity: 1;
+}
+#filterProducts li .tag {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 15px;
+  font: 700 1em/1.2 'PT Sans';
+}
+#filterProducts li .tag .tag-info {
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  width: 100%;
+  float: right;
+  color: #000;
+  padding: 15px;
+  font: 700 1em/1.2 'PT Sans';
+  text-decoration: underline;
+  line-height: 1.6;
+  z-index: 10;
+}
+#filterProducts li .tag .tag-info a {
+  color: #000;
+  font: 100 1em/1.2 'PT Sans';
+}
+#filterProducts li .tag .tag-info .remove {
+  background-color: #cdcdcd;
+  width: 20px;
+  height: 20px;
+  border: none;
+  font-size: 10px;
+}
+#filterProducts li .tag .tag-info .small-button {
+  background-color: #b3b3b3;
+  border-radius: 3px;
+  clear: both;
+  color: #fff;
+  display: block;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.38;
+  margin: 10px 0 0 0;
+  text-align: center;
+  border: none;
+  width: 90px;
+}
+#filterProducts li .tag .tag-info .small-button:hover {
+  transition: all 0.6s ease;
+  background-color: #000;
+}
+#filterProducts li .tag .tag-info img {
+  margin-top: 8px;
+  margin-left: 10px;
+  height: 20px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+#filterProducts li .tag .tag-info img:hover {
+  transition: all 0.6s ease;
+  opacity: 1;
+}
+#filterProducts li .tag .tag-info .shadow {
+  width: 60%;
+  margin-top: -20px;
+}
+.instruction {
+  width: 300px;
+  font: 700 1em/1.2 'PT Sans';
+  color: #afafaf;
+  padding-left: 50px;
+  background: url("/assets/images/pull-right.png") no-repeat left 85px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 100px;
+}
+.instruction h4 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}

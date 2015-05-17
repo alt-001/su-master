@@ -1,0 +1,28 @@
+
+<div ng-controller="authCtrl" ng-hide="currentUser" class="signup-wrapper">
+  <div id="signup">
+    <div class="title">LOG IN</div>
+    <div class="divider with"></div>
+    <div class="form">
+      <form name="userLogin" ng-submit="login()" novalidate="" ng-hide="currentUser">   
+        <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true" class="email col-xs-12"/>
+        <p ng-show="userLogin.email.$invalid &amp;&amp; userLogin.email.$touched" class="error validation">Must be a valid email</p>
+        <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true" class="password col-xs-12"/>
+        <p ng-show="userLogin.password.$invalid &amp;&amp; userLogin.password.$touched" class="error validation">Password is required </p>
+        <button type="submit" ng-disabled="userLogin.$invalid" class="submit">Go</button>
+        <div class="divider or"></div>
+        <p>Not a member? Sign up <a href="/signup">here</a>.</p><a href="#">
+          <button class="close"></button></a>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  $("#signup").fadeIn(1000, 'easeOutExpo');
+  $("#signup .close").click(function(){
+    $(".signup-wrapper").fadeOut(1000, 'easeOutExpo');
+  });
+  $("#signup .submit").click(function(){
+    $(".signup-wrapper").fadeOut(1000, 'easeOutExpo');
+  });
+</script>

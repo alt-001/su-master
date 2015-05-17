@@ -1,0 +1,6 @@
+<a href="#">{{product.name}}</a>
+<button ng-click="startDelete(product.$id)" class="btn">Delete</button>
+<div ng-show="deleting" class="deleting">
+  <button ng-click="deleteProduct(product.$id)" class="btn">Confirm</button>
+  <button ng-click="cancelDelete()" class="btn btn-danger">No</button>
+</div>

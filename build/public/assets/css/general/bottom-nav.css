@@ -1,0 +1,46 @@
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #000;
+  box-shadow: 0 -5px 0 rgba(255,255,255,0.18);
+  height: 40px;
+  overflow: hidden;
+}
+#bottom-nav span {
+  display: inline-block;
+  margin-top: 2px;
+}
+#bottom-nav span.login a {
+  background-image: none;
+}
+#bottom-nav span a {
+  color: #a0a0a0;
+  font: 700 25px/1.2 'PT Sans';
+  font-size: 14px;
+  line-height: 1.38em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding: 10px 13px 10px 20px;
+  background: url("/assets/images/navi_dot.png") -1px 14px no-repeat;
+}
+#bottom-nav span a:hover {
+  transition: all 0.8s ease;
+  color: #fff;
+}
+#bottom-nav span a i {
+  margin-left: 5px;
+  color: #fff;
+}
+#bottom-nav span:first-child a,
+#bottom-nav span.language a {
+  background-image: none;
+}
+#bottom-nav span.language {
+  border-left: 1px solid #2d2d2d;
+  padding-right: 10px;
+}

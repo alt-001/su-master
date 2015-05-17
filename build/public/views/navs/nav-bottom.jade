@@ -1,0 +1,56 @@
+#nav-bottom
+  .menu
+    .menu-block.col-xs-4
+      span.explore
+        a(ng-href='/explore') Explore
+      span.search
+        a(ng-href='/search') Search
+    .menu-block.col-xs-4.text-center(ng-controller='authCtrl')
+      span.login(ng-hide='currentUser')
+        a(ng-href="/signup") Log in
+      span.user(ng-show='currentUser') 
+        a(href='/user/{{currentUser.$id}}/love/loves') {{currentUser.firstname}} {{currentUser.lastname}}
+      span.logout(ng-show='currentUser')
+        a(ng-href="/logout" ng-click="logout()") Log out
+    .menu-block.col-xs-4.text-right
+      span.follow
+        a(href="" ng-model='showFollow' ng-click='showFollow=true') Follow
+      span.info
+        a(ng-href='/info/about') Info
+      span.language
+        a.chinese(ng-href='#') 中文
+#follow(ng-show="showFollow")
+  img.close.img-responsive(ng-click='showFollow=false' src='/assets/img/ui/follow_cross.png')
+  .wrapper
+    .row
+      h4 FOLLOW US ON
+    .row
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#twitter.social_icon.text-center.img-responsive(src='/assets/img/ui/twitter.png')
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#facebook.social_icon.text-center.img-responsive(src='/assets/img/ui/facebook.png')
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#pinterest.social_icon.text-center.img-responsive(src='/assets/img/ui/pinterest.png')
+    .row
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#weibo.social_icon.text-center.img-responsive(src='/assets/img/ui/sina-weibo.png')
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#googleplus.social_icon.text-center.img-responsive(src='/assets/img/ui/googleplus.png')
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#instagram.social_icon.text-center.img-responsive(src='/assets/img/ui/instagram.png')
+    .row
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#youku.social_icon.text-center.img-responsive(src='/assets/img/ui/nice.png')
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#qzone.social_icon.text-center.img-responsive(src='/assets/img/ui/qzone.png')
+      .col-xs-4
+        a(href="#" target="_blank")
+          img#wechat.social_icon.text-center.img-responsive(src='/assets/img/ui/wechat.png')

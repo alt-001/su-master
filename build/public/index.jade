@@ -1,0 +1,16 @@
+html(ng-app='alt')
+  head
+    meta(name='viewport' content='width=device-width user-scalable=no')
+    link(rel='stylesheet' type='text/css' href='/assets/css/styles.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/jquery.fancybox.css')
+    link(rel="stylesheet" href="/vendor/angularjs-toaster/toaster.css")
+    base(href='/')
+  body(ng-cloak)
+    toaster-container(toaster-options="{'time-out': 5000, 'close-button':true}")
+    header
+      include views/navs/nav-top
+    section#main(ng-controll)
+      div(ng-view)
+    footer
+      include views/navs/nav-bottom
+    include scripts

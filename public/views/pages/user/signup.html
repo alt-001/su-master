@@ -1,0 +1,55 @@
+
+<div id="signin-sidebar" class="col-xs-4">
+  <div id="login" ng-controller="authCtrl">
+    <div class="heading">LOG IN</div>
+    <div class="form">
+      <form name="userLogin" ng-submit="login()" novalidate="" ng-hide="currentUser">   
+        <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true" class="email col-xs-12"/>
+        <p ng-show="userLogin.email.$invalid &amp;&amp; userLogin.email.$touched" class="error validation">Must be a valid email</p>
+        <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true" class="password col-xs-12"/>
+        <p ng-show="userLogin.password.$invalid &amp;&amp; userLogin.password.$touched" class="error validation">Password is required </p>
+        <button type="submit" ng-disabled="userLogin.$invalid" class="submit btn">Go</button>
+      </form>
+    </div>
+  </div>
+  <div id="register" ng-controller="authCtrl">
+    <div class="heading">JOIN THE COMMUNITY</div>
+    <div class="form">
+      <form name="userRegister" ng-submit="register()" novalidate="">
+        <input type="text" name="firstname" placeholder="First Name" ng-model="user.firstname" ng-required="true" class="col-xs-6"/>
+        <p ng-show="userRegister.firstname.$invalid &amp;&amp; userRegister.firstname.$touched" class="error validation">First Name is required  </p>
+        <input type="text" name="lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true" class="col-xs-6"/>
+        <p ng-show="userRegister.lastname.$invalid &amp;&amp; userRegister.lastname.$touched" class="error validation">Last Name is required</p>
+        <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true" class="email col-xs-12"/>
+        <p ng-show="userRegister.email.$invalid &amp;&amp; userRegister.email.$touched" class="error validation">Must be a valid email</p>
+        <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true" class="password col-xs-12"/>
+        <p ng-show="userRegister.password.$invalid &amp;&amp; userRegister.password.$touched" class="error validation">Password is required </p>
+        <div class="col-xs-6">
+          <label>
+            <input type="radio" name="fashion" ng-model="user.fashion" ng-required="true" value="x"/>Man's fashion
+          </label>
+        </div>
+        <div class="col-xs-6">
+          <label>
+            <input type="radio" name="fashion" ng-model="user.fashion" ng-required="true" value="y"/>Woman's
+          </label>
+        </div>
+        <div class="newsletter col-xs-12">
+          <input type="checkbox" name="newsletter" ng-model="user.newsletter" value="true" class="pull-left"/>
+          <label>Receive our newsletter and recommendation?</label>
+        </div>
+        <div class="vip col-xs-12">
+          <button type="submit" ng-disabled="userRegister.$invalid" class="btn submit">Join</button>
+        </div>
+        <div class="register col-xs-12 text-left"><a href="mailto:info@alt-001.com?subject=I%20want%20to%20join%20ALT%20as%20designer">JOIN IN AS DESIGNER</a></div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="col-xs-8 pull-right">
+  <div id="products" ng-controller="productsCtrl">
+    <ul masonry="masonry">
+      <li list-products="list-products" ng-repeat="product in products" hover-show="hover-show" class="masonry-brick col-xs-6 col-md-4 col-lg-4 product"></li>
+    </ul>
+  </div>
+</div>

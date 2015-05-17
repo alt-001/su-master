@@ -1,0 +1,229 @@
+
+<div id="profile" ng-controller="userCtrl">
+  <div id="userTopbar">
+    <ul class="col-xs-8">
+      <li>my.</li>
+      <li><a href="/user/{{currentUser.$id}}/love/loves" ng-class="{active: sectionActive(&quot;love&quot;)}">love</a></li>
+      <li><a href="/user/{{currentUser.$id}}/profile" ng-class="{active: sectionActive(&quot;profile&quot;)}">profile</a></li>
+    </ul><span class="col-xs-4 pull-right text-right">lovely to meet, <b>{{currentUser.firstname}} {{currentUser.lastname}}</b></span>
+  </div><br class="clearfix"/>
+  <div id="subNavi" ng-show="ifUnderLove()">
+    <ul>
+      <li><a href="/user/{{currentUser.$id}}/love/loves" ng-class="{active: subSectionActive(&quot;loves&quot;)}">LOVELY PRODUCTS</a></li>
+      <li><a href="/user/{{currentUser.$id}}/love/reserves" ng-class="{active: subSectionActive(&quot;reserves&quot;)}">RESERVED PRODUCTS</a></li>
+      <li><a href="/user/{{currentUser.$id}}/love/follows" ng-class="{active: subSectionActive(&quot;follows&quot;)}">FOLLOWED BRANDS</a></li>
+    </ul>
+  </div><br class="clearfix"/>
+  <div id="accountProfile" class="col-xs-12">
+    <div class="user-info profile-cell col-xs-6">
+      <div class="profile-header col-xs-11">
+        <h4>User info</h4>
+      </div>
+      <div class="profile-item col-xs-11">
+        <div class="name"><strong>Name:  </strong>{{currentUser.firstname}} {{currentUser.lastname}}</div>
+        <div class="username"><strong>User name: </strong>{{currentUser.username}}</div>
+        <div class="email"><strong>Email: </strong>{{currentUser.email}}</div>
+        <div class="address"><strong>Address: </strong>{{currentUser.address}}</div>
+      </div>
+    </div>
+    <div class="user-preference profile-cell col-xs-6">
+      <div class="profile-header col-xs-11">
+        <h4>User preferences</h4>
+      </div>
+      <div class="profile-item col-xs-11">
+        <div class="fashion"><strong>Fashion: </strong>{{fashion}}</div>
+        <div class="category"><strong>Category: </strong>{{categories}}</div>
+        <div class="colour"><strong>Colour: </strong>{{colours}}</div>
+        <div class="brand"><strong>Brands: </strong>{{brands}}</div>
+        <div class="subscription"><strong>Subscription: </strong>{{newsletter}}</div>
+      </div>
+    </div>
+  </div>
+  <div id="edit">
+    <button ng-model="showEdit" ng-click="showEditForm()" ng-show="ifEditable()" class="btn">Edit my profile</button>
+  </div>
+  <div id="edit-form" ng-controller="userCtrl" ng-if="showEdit">
+    <form name="userInfo" ng-submit="userInfoUpdate()" novalidate="">
+      <div class="edit-name col-xs-12">
+        <div class="col-xs-6">
+          <div class="col-xs-11">
+            <h5>First name</h5>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="col-xs-12">
+            <h5>Last name</h5>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <input type="text" name="firstname" placeholder="{{user.firstname}}" ng-model="user.firstname" class="col-xs-11"/>
+        </div>
+        <div class="col-xs-6">
+          <input type="text" name="lastname" placeholder="{{currentUser.lastname}}" ng-model="user.lastname" class="col-xs-12"/>
+        </div>
+      </div>
+      <div class="edit-username">
+        <h5>User name</h5>
+        <input type="text" name="username" placeholder="{{currentUser.username}}" ng-model="user.username" class="col-xs-12"/>
+      </div>
+      <div class="edit-address">
+        <h5>Address</h5>
+        <input type="text" name="address" placeholder="{{currentUser.address}}" ng-model="user.address" class="col-xs-12"/>
+      </div><br class="clearfix"/>
+      <div class="edit-fashion col-xs-12">
+        <div class="edit-title">
+          <h5>Fashion</h5>
+        </div>
+        <div class="col-xs-3">
+          <input type="radio" name="fashion" ng-model="user.fashion" value="x" ng-checked="ng-checked"/>
+          <label>Man's fashion</label>
+        </div>
+        <div class="col-xs-3">
+          <input type="radio" name="fashion" ng-model="user.fashion" value="y"/>
+          <label>Woman's fashion</label>
+        </div>
+      </div>
+      <div class="edit-colour col-xs-12">
+        <div class="edit-title">
+          <h5>Colour</h5>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.black" value="black" checked="checked"/>black
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.white" value="white" checked="checked"/>white
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.grey" value="grey" checked="checked"/>grey
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.red" value="red" checked="checked"/>red
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.blue" value="blue" checked="checked"/>blue
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.yellow" value="yellow" checked="checked"/>yellow
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.green" value="green" checked="checked"/>green
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.brown" value="brown" checked="checked"/>brown
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.orange" value="orange" checked="checked"/>orange
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.purple" value="purple" checked="checked"/>purple
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.pink" value="pink" checked="checked"/>pink
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.neutral" value="neutral" checked="checked"/>neutral
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.neon" value="neon" checked="checked"/>neon
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.metallic" value="metallic" checked="checked"/>metallic
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.print" value="print" checked="checked"/>print
+          </label>
+        </div>
+        <div class="col-xs-3">
+          <label class="colour">
+            <input type="checkbox" name="colour" ng-model="user.colour.reflective" value="reflective" checked="checked"/>reflective
+          </label>
+        </div>
+      </div>
+      <div class="edit-category col-xs-12">
+        <div class="edit-title">
+          <h5>Category</h5>
+        </div>
+        <div class="col-xs-4">
+          <label>
+            <input type="checkbox" name="category" ng-model="user.category.footwear" value="footwear"/>Shoes
+          </label>
+        </div>
+        <div class="col-xs-4">
+          <label>
+            <input type="checkbox" name="category" ng-model="user.category.accessories" value="accessories"/>Accessories
+          </label>
+        </div>
+        <div class="col-xs-4">
+          <label>
+            <input type="checkbox" name="category" ng-model="user.category.bag" value="bag"/>Bags
+          </label>
+        </div>
+        <div class="col-xs-4">
+          <label>
+            <input type="checkbox" name="category" ng-model="user.category.jewellery" value="jewellery"/>Jewellery
+          </label>
+        </div>
+        <div class="col-xs-4">
+          <label>
+            <input type="checkbox" name="category" ng-model="user.category.apparel" value="apparel"/>Apparel
+          </label>
+        </div>
+        <div class="col-xs-4">
+          <label>
+            <input type="checkbox" name="category" ng-model="user.category.misc" value="misc"/>lifestyle
+          </label>
+        </div>
+      </div>
+      <div class="edit-brand col-xs-12">
+        <div class="edit-title">
+          <h5>Most favourite 3 brands</h5>
+        </div>
+        <div class="col-xs-4">
+          <input type="text" name="brand" placeholder="{{currentUser.brand.first}}" ng-model="user.brand.first" class="col-xs-11"/>
+        </div>
+        <div class="col-xs-4">
+          <input type="text" name="brand" placeholder="{{currentUser.brand.second}}" ng-model="user.brand.second" class="col-xs-11"/>
+        </div>
+        <div class="col-xs-4">
+          <input type="text" name="brand" placeholder="{{currentUser.brand.third}}" ng-model="user.brand.third" class="col-xs-11"/>
+        </div>
+      </div>
+      <div class="edit-submit col-xs-4">
+        <button type="submit" class="btn">Save</button>
+      </div>
+      <div class="edit-subscription col-xs-8">
+        <input type="checkbox" name="newsletter" ng-model="user.newsletter" value="true"/>
+        <label>Receive our newsletter and recommendation?</label>
+      </div>
+    </form>
+  </div>
+</div>

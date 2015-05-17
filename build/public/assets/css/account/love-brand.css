@@ -1,0 +1,22 @@
+#account-love-brand a {
+  color: #000;
+}
+#account-love-brand a:hover {
+  text-decoration: none;
+}
+#account-love-brand #brand-info {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: rgba(255,255,255,0.5);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'PT Sans';
+  padding: 10px;
+}
+#account-love-brand #brand-info:hover .remove {
+  opacity: 1;
+}
+#account-love-brand #brand-info .remove {
+  opacity: 0;
+}
